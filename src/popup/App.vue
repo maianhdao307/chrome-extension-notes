@@ -1,0 +1,12 @@
+<template>
+  <popup />
+</template>
+
+<script>
+import Popup from "@/components/Popup.vue";
+
+export default {
+  name: "App",
+  components: { Popup }
+};
+</script>
