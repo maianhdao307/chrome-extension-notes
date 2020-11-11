@@ -7,13 +7,8 @@ import Options from "@/components/Options.vue";
 
 export default {
   name: "App",
-  components: { Options },
+  components: { Options }
 };
 </script>
 
-<style>
-html {
-  width: 400px;
-  height: 400px;
-}
-</style>
+<style></style>

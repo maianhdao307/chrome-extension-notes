@@ -5,10 +5,14 @@ browser.runtime.onMessage.addListener(function() {
       return;
     }
     result.notes.forEach(note => {
-      if (!note.isRemind || !note.time) {
+      if (!note.isRemind || !note.remindDate || !note.remindTime) {
         return;
       }
-      const notifyTime = new Date(note.time);
+
+      const notifyTime = new Date(
+        this.remindDate + "T" + this.remindTime + "+07:00"
+      );
+
       const now = new Date();
       const diff = notifyTime.getTime() - now.getTime();
       if (isNaN(diff) || diff < 0 || diff > 8 * 3600 * 1000) {
