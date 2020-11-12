@@ -1,17 +1,22 @@
 <template>
   <b-form @submit.stop.prevent @submit="submitNote">
-    <b-form-input
+    <b-form-textarea
       v-model="content"
       placeholder="Type note"
-      class="my-3"
+      class="mb-3 mt-2"
       required
-    ></b-form-input>
+    ></b-form-textarea>
     <b-form-checkbox v-model="isRemind" switch class="my-3">
       Remind
     </b-form-checkbox>
     <b-form-datepicker v-model="remindDate" v-if="isRemind"></b-form-datepicker>
     <b-form-timepicker v-model="remindTime" v-if="isRemind"></b-form-timepicker>
-    <b-button class="my-3 d-block mx-auto" type="submit">Submit</b-button>
+    <b-button
+      class="mt-3 mb-2 d-block mx-auto"
+      variant="primary"
+      type="submit"
+      >{{ submitButtonLabel }}</b-button
+    >
   </b-form>
 </template>
 
@@ -34,7 +39,7 @@ export default {
       return initData();
     }
   },
-  props: ["initialValue"],
+  props: ["initialValue", "submitButtonLabel"],
   emits: ["submit"],
   methods: {
     submitNote() {

@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <h3>Add note</h3>
-    <note-form @submit="addNote"></note-form>
+    <h4 class="mb-3">Add note</h4>
+    <note-form @submit="addNote" submit-button-label="Add"></note-form>
   </div>
 </template>
 
